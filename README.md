@@ -2,6 +2,8 @@
 
 Welcome to the folder structure for your NextJS React Query application! Feel free to customize and adapt this structure to fit the unique needs of your project. Remember, there is no one-size-fits-all solution when it comes to organizing your project folders.
 
+> In /src folder you can find example for simple News website project.
+
 ---
 
 ## Folder Structure Overview
