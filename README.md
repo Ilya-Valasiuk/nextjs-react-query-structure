@@ -6,7 +6,7 @@ Welcome to the folder structure for your NextJS React Query application! Feel fr
 
 ## Folder Structure Overview
 
-### api
+### src/api
 
 - **common**
   - `types.ts` - generic types based on you API. Example: `PaginatedResponse<T>`.
@@ -15,11 +15,11 @@ Welcome to the folder structure for your NextJS React Query application! Feel fr
   - `fetchers.ts` - pure JS fetchers for entities
   - `queries.ts` - react query hooks for entities
 
-### app or pages
+### src/app or src/pages
 
-In the `app` or `pages` folder, define your application routes. Keep components free of logic and focus on loading data and rendering components from `/components/[page-name]/[PageName].tsx`.
+Define your application routes. Keep components free of logic and focus on loading data and rendering components from `/components/[page-name]/[PageName].tsx`.
 
-### components
+### src/components
 
 - **common** - Includes shared components like Header and Footer.
   - **header**
@@ -33,27 +33,27 @@ In the `app` or `pages` folder, define your application routes. Keep components 
   - `constants.ts` - component specific constants
   - `types.ts` - component specific types
 
-### constants
+### src/constants
 
 Centralize app constants, such as `variables.ts` and `pages.ts`.
 
-### helpers
+### src/helpers
 
 Project-specific helpers go here.
 
-### hooks
+### src/hooks
 
 Define custom hooks, e.g., `useClickOutside` or `useDebounce`, for across-the-board use.
 
-### providers
+### src/providers
 
 Design providers for the application within this folder.
 
-### styles
+### src/styles
 
 - `global.css` - Includes configurations for Tailwind CSS.
 
-### utils
+### src/utils
 
 Reusable utilities like date helpers or object utilities belong in this folder. Keep utils free of business logic.
 
