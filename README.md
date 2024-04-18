@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS React Query Application Folder Structure
 
-## Getting Started
+Welcome to the folder structure for your NextJS React Query application! Feel free to customize and adapt this structure to fit the unique needs of your project. Remember, there is no one-size-fits-all solution when it comes to organizing your project folders.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Folder Structure Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### api
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **common**
+  - `types.ts` - generic types based on you API. Example: `PaginatedResponse<T>`.
+- **[DomainName]**
+  - `types.ts` - types only for this domain
+  - `fetchers.ts` - pure JS fetchers for entities
+  - `queries.ts` - react query hooks for entities
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### app or pages
 
-## Learn More
+In the `app` or `pages` folder, define your application routes. Keep components free of logic and focus on loading data and rendering components from `/components/[page-name]/[PageName].tsx`.
 
-To learn more about Next.js, take a look at the following resources:
+### components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **common** - Includes shared components like Header and Footer.
+  - **header**
+    - `Header.tsx`
+- **[page-name]**
+  - **components** - Specific components for `[PageName].tsx`.
+    - **component-a**
+      - `ComponentA.tsx`
+  - `[PageName].tsx` - Utilizes components from `./components` or `src/components/common`.
+  - `helpers.ts` - component specific helpers
+  - `constants.ts` - component specific constants
+  - `types.ts` - component specific types
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### constants
 
-## Deploy on Vercel
+Centralize app constants, such as `variables.ts` and `pages.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### helpers
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Project-specific helpers go here.
+
+### hooks
+
+Define custom hooks, e.g., `useClickOutside` or `useDebounce`, for across-the-board use.
+
+### providers
+
+Design providers for the application within this folder.
+
+### styles
+
+- `global.css` - Includes configurations for Tailwind CSS.
+
+### utils
+
+Reusable utilities like date helpers or object utilities belong in this folder. Keep utils free of business logic.
+
+---
+
+Feel free to explore and adapt this structure to align with the needs of your NextJS React Query application. Enjoy coding and happy building! 🚀🌟
