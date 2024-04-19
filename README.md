@@ -12,10 +12,10 @@ Welcome to the folder structure for your NextJS React Query application! Feel fr
 
 - **common**
   - `types.ts` - generic types based on you API. Example: `PaginatedResponse<T>`.
-- **[DomainName]**
+- **[domain-name]** *example - news*
   - `types.ts` - types only for this domain
-  - `fetchers.ts` - pure JS fetchers for entities
-  - `queries.ts` - react query hooks for entities
+  - `fetchers.ts` - pure JS fetchers for this `[domain-name]` entities
+  - `queries.ts` - react query hooks for this `[domain-name]` entities
 
 ### src/app or src/pages
 
@@ -24,16 +24,20 @@ Define your application routes. Keep components free of logic and focus on loadi
 ### src/components
 
 - **common** - Includes shared components like Header and Footer.
-  - **header**
+  - **header** *(example of common components)*
     - `Header.tsx`
-- **[page-name]**
+- **[page-name]** 
   - **components** - Specific components for `[PageName].tsx`.
     - **component-a**
-      - `ComponentA.tsx`
+      - **components** - Specific components for `ComponentA.tsx`.
+      - `ComponentA.tsx` - Utilizes components from `./components` or `src/components/common`.
+      - `constants.ts`
+      - `types.ts`
+      - `helpers.ts`
   - `[PageName].tsx` - Utilizes components from `./components` or `src/components/common`.
-  - `helpers.ts` - component specific helpers
   - `constants.ts` - component specific constants
   - `types.ts` - component specific types
+  - `helpers.ts` - component specific helpers
 
 ### src/constants
 
